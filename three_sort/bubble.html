@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bubble</title>
+</head>
+<body>
+<script>
+  let arr=[20,14,25,31,2];
+  function bubble(arr) {
+    let temp = null;
+     for(let i = 0;i < arr.length-1;i++) {
+       for(let j = 0;j < arr.length-1-i;j++) {
+         if(arr[j] > arr[j+1]) {
+           temp = arr[j];
+           arr[j] = arr[j+1];
+           arr[j+1] = temp;
+         }
+       }
+    }
+     return arr;
+  }
+  console.log(bubble(arr));
+</script>
+</body>
+</html>    

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>insert</title>
+</head>
+<body>
+<script>
+  let arr=[20,14,25,31,2];
+  function insert(arr) {
+    let handle = [];
+    handle.push(arr[0]);
+    for(let i = 1;i < arr.length;i++) {
+      let a = arr[i];
+      for(let j = handle.length-1;j >= 0;j--) {
+        let b = handle[j];
+        if(a > b) {
+          handle.splice(j+1,0,a);
+          break;
+        }
+        if(j === 0) {
+          handle.unshift(a);
+        }
+      }
+    }
+    return handle;
+  }
+  console.log(insert(arr));
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>quick</title>
+</head>
+<body>
+<script>
+let arr = [20,6,15,17,24,16];
+function quick(arr) {
+  if(arr.length <= 1) {
+    return arr;
+  }
+    let middleIndex = Math.floor(arr.length/2);
+    let middleValue = arr.splice(middleIndex,1)[0];
+
+    let arrLeft = [];
+    let arrRight = [];
+    for(let i = 0;i < arr.length;i++) {
+      arr[i] > middleValue ? arrRight.push(arr[i]) : arrLeft.push(arr[i]);
+    }
+    return quick(arrLeft).concat(middleValue,quick(arrRight));
+}
+console.log(quick(arr));
+</script>
+</body>
+</html>
